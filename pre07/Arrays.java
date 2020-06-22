@@ -24,7 +24,7 @@ public static int[] histogram(int[] a, int counter){
 }
 
 public static int[] indexOfMax(int[] a){
-  int[] ind = 0;
+  int ind = 0;
   int i = 1;
   while(i<a.length) {
     if (a[i] > a[ind]){
@@ -35,10 +35,34 @@ public static int[] indexOfMax(int[] a){
   return ind;
 }
 
-}
+
 //Answer to Second Prompt in Excercie 4:
-//Yes, it is possible to compose indexOfMax method as an enhanced for loop.  Enhanced for loops can be used can be used when you wish to step through an array in first to last order, and it is not needed to know the index of the current element.
+//No, it is not possible to compose indexOfMax method as an enhanced for loop.  Enhanced for loops can be used can be used when you wish to step through an array in first to last order, when it is not needed to know the index of the current element.
 
 
-//public static boolean[] sieve(int n){
-//}
+//Unsure of Exercise 5 - I looked for other resources and got a bit lost - Sam helped me out a bit!
+public static boolean[] sieve(int n){
+  boolean[] s = new boolean[n];
+  for (int i = 0; i < n; i++){
+    s[i] = prime(i);
+  }
+  return s;
+}
+
+public static boolean prime(int num) {
+  if (num <= 1){
+   return false;
+ } else if (num == 2) {
+    return true;
+ } else if {
+  int i = 2;
+  while (i < (num / 2)) {
+    if (num % i == 0) {
+      return false;
+    }
+    i++;
+  }
+ } else {
+  return true;
+ }
+}
