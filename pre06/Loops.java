@@ -30,6 +30,8 @@ public static int factorial(int n){
   return num;
 }
 
+
+//Still unsure of myExp
 public static double myExp(double x, int n){
   double num = 1;
   double a = 1;
