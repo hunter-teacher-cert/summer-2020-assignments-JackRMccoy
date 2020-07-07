@@ -17,7 +17,7 @@ public class SuperArrayDriver
 //had to add a second parameter to line 20, error on original add)
     System.out.println("Testing overfill (calling grow() in add)");
     for (int i=0; i<15; i++) {
-      sa.add(i, i+1);
+      sa.add(i);
     }//for i
     System.out.println(sa);
     System.out.println(sa.isEmpty());

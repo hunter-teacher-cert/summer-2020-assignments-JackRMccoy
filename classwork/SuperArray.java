@@ -2,32 +2,41 @@ import java.io.*;
 import java.util.*;
 
 public class SuperArray {
+  //instance variables
   private int[] data;
   private int numberElements;
 
-
+  //default constructor
   public SuperArray() {
     this.data = new int[10];
     this.numberElements = 0;
   }
 
+  //can also write default constructor as
+  /*
+  public SuperArray() {
+    this(10); //aka SuperArray(10)
+  }
+  */
+
+  //overloaded constructor
   private SuperArray(int size) {
     this.data = new int[size];
     this.numberElements = 0;
   }
 
-/*
+
   //this routine will add the parameter value to the end of the SuperArray (don’t forget to update numberElements). If there is no more room in the array do nothing
   public void add(int value) {
     if (this.numberElements < this.data.length){
       this.data[numberElements] = value;
       this.numberElements++;
     } else {
-      grow();
+      grow(this.numberElements * 2);
     }
 
   }
-  */
+
 
   //???? return the value at location index from the array. If index is past the last element, return -1
   public int get(int index) {
@@ -56,7 +65,7 @@ public class SuperArray {
     return s;
   }
 
-  public void grow(int arraySizeAdd){
+  private void grow(int arraySizeAdd){
     int [] bigger = new int [this.data.length + arraySizeAdd];
       for(var i = 0; i< this.data.length; i++){
         bigger[i] = data[i];
@@ -66,7 +75,7 @@ public class SuperArray {
 
   public void add(int index, int value){
     if ( numberElements == data.length ){
-      grow(1);
+      grow(this.numberElements * 2);
     }
     for( int i = numberElements; i > index ; i--) {
       data[i]=data[i-1];
