@@ -26,7 +26,7 @@ public class MyStackDriver {
     System.out.println("There are " + sStack.size() + " Nodes in the Stack.");
 		System.out.println(sStack);
 		System.out.println();
-		System.out.println("The top Node contains "+sStack.top());
+		System.out.println("The top Node contains " + sStack.top()) + ".";
 		System.out.println(sStack);
 
   }//main
