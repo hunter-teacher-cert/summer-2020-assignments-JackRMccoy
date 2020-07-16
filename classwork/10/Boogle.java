@@ -40,10 +40,10 @@ public class Boogle
     int high = al.size() - 1;
     while (low <= high) {
       int middle = 1 + (high - 1) / 2;
-      if (middle == target){ //checks if the middle value is the target
+      if ((int) al.get(middle) == target){ //checks if the middle value is the target
         return middle;
       }
-      if (middle < target) {
+      if ((int) al.get(middle) < target) {
         low = middle + 1; //sets the low range to one above the middle
       } else {
         high = middle - 1;  //sets the high range to one below the middle
