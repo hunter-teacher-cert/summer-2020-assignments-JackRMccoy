@@ -124,11 +124,32 @@ public class Boogle
     }
 
 
+    public void sort (ArrayList<Integer> al) {
+      //Java command  Collections.sort(al); [???]
+
+      //set up variables (tmp for swapping, l for the lower bound, h for higher bound)
+        int tmp = 0;
+        int l = 0;
+        int h = al.size();
+      //loop
+      while (l < h -1) {
+        // find the min vlaue for the current region (low to end of arrayList)
+        int index = findSmallest(al, l, h);
+        //swap min value with low ascending
+        tmp = (int) al.get(l);
+        al.set(l, al.get(index));
+        al.set(index, tmp);
+        //increment
+        l++;
+      }
+    }
+
+
   //##################################################
   //##################################################
 
 
-  public static void main( String[] args )
+  public static void main( String[] args)
   {
 
 
@@ -140,7 +161,7 @@ public class Boogle
       smallIndex = findSmallest(slist,0,slist.size());
       System.out.println(slist);
       System.out.printf("Smallest is at slist[%d] and is %d\n",smallIndex,slist.get(smallIndex));
-    /*~~~~v~~~~~~move~me~down~~~1~block~at~a~time~~~~~~~~~~v~~~~
+/*~~~~v~~~~~~move~me~down~~~1~block~at~a~time~~~~~~~~~~v~~~~
       ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~*/
 
 }//end main
