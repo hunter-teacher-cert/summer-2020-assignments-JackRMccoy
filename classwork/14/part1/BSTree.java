@@ -84,6 +84,51 @@ public class BSTree {
       throw new NullPointerException();
     }
 
+    public void delete (int key) {
+      //if the tree is empty - nothing to delete
+      if (root == null){
+        return;
+      }
+
+      //find the node to delete
+      //and find the node above it (piggyback)
+      TreeNode front = root;
+      TreeNode trailer = root;
+
+      //do the piggy back loop until we find the node or null if the key isn't present
+      while(front != null && front.getData() != key) {
+        int frontValue = front.getData();
+        if (front.getData() < key){
+          trailer = front;
+          front = front.getRight();
+        } else {
+          trailer = front;
+          front = front.getLeft();
+        }
+      }
+      //front points to null, trailer points to the node before above where the new node goes
+      //add the code to finish the insertion
+      if(front == null){
+        return;
+      }
+
+      //front points to the node we want to delete and trailer points to the one above it
+
+      //case 1 - node we want to delete is a leaf
+      if(front.getLeft() == null && front.getRight() == null){
+        //repoint front's parent to NullPointerException
+      }
+      //case 2 - Node with one child
+      else if (true) { //Replace true with boolean)
+        //repoint front's parent to front's child
+      }
+      //case 3 - Node with two children
+      else {
+        //find the node witht he largest value
+        //on fronts left subtree and replace front with it (go left once and as far right as you can)
+      }
+    }
+
     public void insert (int key) {
       TreeNode newNode= new TreeNode(key);
 
