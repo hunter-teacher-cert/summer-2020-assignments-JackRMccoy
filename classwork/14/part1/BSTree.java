@@ -24,6 +24,40 @@ public class BSTree {
       throw new NullPointerException();
     }
 
+    public void insert (int key) {
+      TreeNode newNode= new TreeNode(key);
+
+      //If tree is empty - isert new node as root
+      if (root == null){
+        root = newNode;
+        return;
+      }
+
+      TreeNode front = root;
+      TreeNode trailer = root;
+
+      while(front != null) {
+        int frontValue = front.getData();
+        if (frontValue == key) {
+          //key is already in the tree
+          return;
+        } else if (frontValue < key){
+          trailer = front;
+          front = front.getRight();
+        } else {
+          trailer = front;
+          front = front.getLeft();
+        }
+      }
+      //front poitns to null, trailer points to the node before above where the new node goes
+      //add the code to finish the insertion
+      if (key > trailer.getData()){
+        trailer.setRight(newNode);
+      } else {
+        trailer.setLeft(newNode);
+      }
+    }
+
     public void seed(){
     	TreeNode t;
 
