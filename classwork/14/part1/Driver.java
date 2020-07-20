@@ -33,14 +33,15 @@ public class Driver {
 		t.insert(3);
 		t.insert(25);
 
+    /*
     t.traverse();
     t.traverse2();
     t.traverse3();
+    */
 
-    /*
 		t.preorderTraverse();
 		t.postorderTraverse();
 		t.inorderTraverse();
-    */
+
   }
 }
