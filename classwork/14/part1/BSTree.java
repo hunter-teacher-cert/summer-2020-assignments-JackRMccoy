@@ -117,14 +117,35 @@ public class BSTree {
       //case 1 - node we want to delete is a leaf
       if(front.getLeft() == null && front.getRight() == null){
         //repoint front's parent to NullPointerException
+        if (front.getData() < key){
+          front.setRight(null);
+        } else {
+          front.setLeft(null);
+        }
+        return;
       }
       //case 2 - Node with one child
-      else if (true) { //Replace true with boolean)
+      else if ((front.getLeft() != null && front.getRight() == null) || (front.getLeft() == null && front.getRight() != null)) { //Replace true with boolean)
         //repoint front's parent to front's child
+        if(front.getRight() != null) {
+          if(trailer.getData() > key) {
+            trailer.setLeft(front.getRight());
+          } else {
+            trailer.setRight(front.getRight());
+          }
+        } else {
+          if(trailer.getData() > key) {
+            trailer.setLeft(front.getLeft());
+          } else {
+            trailer.setRight(front.getLeft());
+          }
+        }
+        return;
       }
       //case 3 - Node with two children
       else {
-        //find the node witht he largest value
+        //find the node with the largest value
+        
         //on fronts left subtree and replace front with it (go left once and as far right as you can)
       }
     }
