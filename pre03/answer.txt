@@ -1,0 +1,9 @@
+Pre-work Assignment 3
+
+1) The ping method invokes an output of "." and the baffle method invokes an output of "wug" and then calls the ping method.
+    No, I wug. You wugga wug.I wug.
+
+2) main -> zoop -> baffle -> ping [*first ping method invoked]
+
+3) If you invoke baffle(); at the end of the ping(); method there will be an endless loop back and forth between the ping method and baffle method, because they keep invoking each other.
+    No, I wug.wug.wug.wug.wug..... etc.
